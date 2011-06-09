@@ -1,0 +1,20 @@
+This is Clojure-PowerLoom, a Clojure wrapper for the Java version of
+the PowerLoom knowledge representation and reasoning system.
+
+There are two APIs:
+
+    powerloom.low: Replicates the Common Lisp STELLA API as much as
+    		   possible.  This level works in terms of objects
+    		   from the STELLA/PowerLoom system.
+
+    powerloom.high: A more Clojureish interface that tries to hide
+      		    the STELLA/PowerLoom Java objects.
+
+Take a look at the INSTALL file for instructions on how to install
+Clojure-PowerLoom, and the test suite to see how it works.  This code
+is at a very early stage, and interfaces will change as coverage of
+the PowerLoom API increases.
+
+This software is copyright © 2011 Dave Lambert, and distributed under
+the GNU Lesser General Public License.  See the COPYING file for the
+full license.

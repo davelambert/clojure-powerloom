@@ -1,0 +1,41 @@
+;;; Copyright © 2011 Dave Lambert
+
+(defmodule "CLOJURE-TESTING"
+  :documentation "Module for Clojure testing."
+  :includes ("PL-USER"))
+
+(in-module "CLOJURE-TESTING")
+
+(clear-module "CLOJURE-TESTING")
+(reset-features)
+
+;;; T-Box
+
+(defconcept project)
+(defconcept language)
+
+(defrelation language-name ((?l language) (?name STRING)))
+
+(defrelation project-name ((?p project) (?name STRING)))
+
+(defrelation project-language ((?p project) (?l language)))
+
+(defrelation language-project ((?p project) (?l language)))
+
+(defrule language-project-rule
+  (=> (and (language ?l)
+	   (project ?p)
+           (project-language ?p ?l))
+      (language-project ?l ?p)))
+
+;;; A-Box
+
+(assert (and (language clojure)
+	     (project clojure)
+	     (project-name clojure "Clojure")
+	     (language-name clojure "Clojure")
+	     (project-language clojure clojure)))
+
+(assert (and (project clojure-powerloom)
+	     (project-name clojure-powerloom "Clojure PowerLoom")
+	     (project-language clojure-powerloom clojure)))

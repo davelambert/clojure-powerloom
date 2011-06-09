@@ -1,0 +1,19 @@
+Installing Clojure-PowerLoom
+
+You will need to download and install the PowerLoom JARs manually,
+since they seem not to be available through any Maven or similar
+repositories.  Clojure-PowerLoom is developed against the development
+snapshots of PowerLoom 4, and in particular has been tested with
+version 4.0.2.beta.  Tarballs of various versions are available from:
+
+    http://www.isi.edu/isd/LOOM/PowerLoom/download.html
+
+You need to put the powerloom.jar and stella.jar files in the
+classpath.  If you've unzipped a PowerLoom tarball to $POWERLOOM, the
+following should give you a working Clojure-PowerLoom environment:
+
+    $ git clone https://github.com/davelambert/clojure-powerloom.git
+    $ cd clojure-powerloom
+    $ lein deps
+    $ cp $POWERLOOM/native/java/lib/*jar lib
+    $ lein test

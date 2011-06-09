@@ -1,0 +1,4 @@
+# Built files
+*.class
+*.jar
+/pom.xml
