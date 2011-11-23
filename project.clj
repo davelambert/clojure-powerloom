@@ -6,5 +6,5 @@
   :license {:name "GNU Lesser General Public License v3"
 	    :url "http://www.opensource.org/licenses/lgpl-3.0.html"
 	    :distribution :repo}
-  :dependencies [[org.clojure/clojure "1.2.1"]]
-  :dev-dependencies [[swank-clojure "1.2.1"]])
+  :dependencies [[org.clojure/clojure "1.3.0"]]
+  :dev-dependencies [[swank-clojure "1.3.3"]])
