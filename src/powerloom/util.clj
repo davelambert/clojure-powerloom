@@ -28,7 +28,7 @@ Not for public consumption."
        (seqify-stella-iterator (StellaIterator. iterator))))
 
 (defmulti stella-parse-sexp
-  "Parse a Clojre sexp into a Stella sexp structure."
+  "Parse a Clojure sexp into a Stella sexp structure."
   (fn [sexp] (class sexp)))
 
 (defmethod stella-parse-sexp clojure.lang.PersistentList [sexp]
