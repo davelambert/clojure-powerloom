@@ -13,19 +13,13 @@ Not for public consumption."
 (defn- from-stella-object [obj]
   (read-string (edu.isi.powerloom.PLI/objectToParsableString obj)))
 
-(defn- seqify-stella-iterator [^StellaIterator iterator]
-  (loop [values '()]
-    (if (.hasNext iterator)
-      (recur (cons (.next iterator) values))
-      (reverse values))))
-
 (defn from-pl-iterator [iterator]
   (map (fn [v]
 	 (let [n (PLI/getColumnCount v)]
 	   (map (fn [column]
 		  (from-stella-object (PLI/getNthValue v column nil nil)))
 		(range 0 n))))
-       (seqify-stella-iterator (StellaIterator. iterator))))
+       (iterator-seq (StellaIterator. iterator))))
 
 (defmulti stella-parse-sexp
   "Parse a Clojure sexp into a Stella sexp structure."
